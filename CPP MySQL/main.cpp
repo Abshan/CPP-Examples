@@ -16,6 +16,7 @@ int main(void) {
         /* Connect to the MySQL test database */
         con->setSchema("test1");
 
+        /* Simple read operation */
         stmt = con->createStatement();
         res = stmt->executeQuery("select * from testtab;");
         while (res->next()) {
@@ -25,6 +26,7 @@ int main(void) {
         con->close();
         stmt->close();
         res->close();
+        
     }catch (sql::SQLException &e) {
         cout << "Error: " << e.getErrorCode();
     }
