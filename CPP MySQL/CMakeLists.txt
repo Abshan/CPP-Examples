@@ -3,6 +3,6 @@ project(MySQL Example)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Test main.cpp)
+add_executable(Test main.cc)
 
 target_link_libraries(Test mysqlcppconn)
