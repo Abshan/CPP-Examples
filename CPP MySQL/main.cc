@@ -14,11 +14,11 @@ int main(void) {
         driver = get_driver_instance();
         con = driver->connect("tcp://127.0.0.1:3306", "root", "root");
         /* Connect to the MySQL test database */
-        con->setSchema("test1");
+        con->setSchema("test_table");
 
         /* Simple read operation */
         stmt = con->createStatement();
-        res = stmt->executeQuery("select * from testtab;");
+        res = stmt->executeQuery("select * from test_table;");
         while (res->next()) {
             cout << res->getInt("id");
             cout << res->getString("name");
